@@ -1,8 +1,8 @@
--- What I learned
--- 1) use "Trie" for letter based graphs 
--- 2) you can use dict for "Trie"
--- 3) when you assign python dict as variables, it's not going to renew the dict. 
---    It will only point to the existing graph
+# -- What I learned
+# -- 1) use "Trie" for letter based graphs 
+# -- 2) you can use dict for "Trie"
+# -- 3) when you assign python dict as variables, it's not going to renew the dict. 
+# --    It will only point to the existing graph
 
 
 
