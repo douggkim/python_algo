@@ -7,7 +7,7 @@
 # # uppercase: 65~90 
 # # lowercase: 97~122 
 # 5) you could use string  'abcdefghijklmnopqrstuvwxyz'
-# 6) check upper with is_upper() 
+# 6) check upper with isupper() 
 #!/bin/python3
 
 import math
