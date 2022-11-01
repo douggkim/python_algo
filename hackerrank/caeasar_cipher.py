@@ -1,12 +1,13 @@
-# What I learned 
-# 1) if you want to change a part of string 
-# alp = alp[:i]+target+alp[i+1:]
-# 2) ord({letter}): return the ascii code 
-# 3) chr({number}): return the character corresponding to the ascii code 
-# 4)ASCII 
-# uppercase: 65~90 
-# lowercase: 97~122 
-
+# # What I learned 
+# # 1) if you want to change a part of string 
+# # alp = alp[:i]+target+alp[i+1:]
+# # 2) ord({letter}): return the ascii code 
+# # 3) chr({number}): return the character corresponding to the ascii code 
+# # 4)ASCII 
+# # uppercase: 65~90 
+# # lowercase: 97~122 
+# 5) you could use string  'abcdefghijklmnopqrstuvwxyz'
+# 6) check upper with is_upper() 
 #!/bin/python3
 
 import math
@@ -26,22 +27,24 @@ import sys
 
 def caesarCipher(s, k):
     # Write your code here
-    k%=26
-    tot = len(s)
-    for i in range(tot):
-        asc = ord(s[i])
-        if asc<65 or (90<asc and asc<97) or 122<asc: 
-            continue 
-        elif 65<= asc and asc<=90: 
-            if 65<=asc+k and asc+k<=90: 
-                s=plus_3(s,i,k)
-            else: 
-                s=plus_3_return(s,i,65,90,k)
-        elif 97<= asc and asc<=122: 
-            if 97<=asc+k and asc+k<=122: 
-                s=plus_3(s,i,k)        
-            else: 
-                s=plus_3_return(s,i,97,122,k)
+    alph = 'abcdefghijklmnopqrstuvwxyz'
+    result_str = ''
+    new_alph = {}
+    
+    for i in range(len(alph)): 
+        new_alph[alph[i]] = alph[(i+k)%len(alph)]
+        
+    for i in range(len(s)): 
+        if s[i].lower() in new_alph.keys(): 
+            if s[i].isupper(): 
+                result_str += new_alph[s[i].lower()].upper()
+            else : 
+                result_str += new_alph[s[i].lower()]
+        else: 
+            result_str+=s[i]
+                
+                
+    return result_str
             
     
     
